@@ -1,0 +1,2 @@
+# UsefulTips
+Storage for tips
