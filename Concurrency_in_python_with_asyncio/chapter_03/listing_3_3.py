@@ -9,9 +9,11 @@ server_socket.listen()
 
 connections = [] # connections storage
 
+# this simple server synchronously processes connections:
+# accept connections, echo every message for clients
 try:
     while True:
-        connection, client_address = server_socket.accept()
+        connection, client_address = server_socket.accept() # wait for incoming connection request
         print(f'I got a connection from {client_address}!')
         connections.append(connection)
 

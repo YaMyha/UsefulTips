@@ -7,8 +7,9 @@ server_address = ('127.0.0.1', 8000)
 server_socket.bind(server_address) # bind socket and host+port
 server_socket.listen()
 
+# we use try as context manager to make sure if socket is closed after all
 try:
-    connection, client_address = server_socket.accept()
+    connection, client_address = server_socket.accept() # connection - another socket for concrete client
     print(f'I got a connection from {client_address}!')
 
     # Add incoming data processing
